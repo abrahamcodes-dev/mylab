@@ -26,7 +26,7 @@ body {
   background: radial-gradient(1200px 800px at 20% 15%, rgba(0, 0, 0, 0.18), transparent 60%),
     radial-gradient(900px 700px at 80% 35%, rgba(59, 130, 246, 0.12), transparent 55%),
     linear-gradient(180deg, #070a14, var(--bg));
-  background-image: url("ressource/rema.jpg");
+  background-image: url("rema.jpg");
   background-size: cover;      
   background-position: center;  
   background-repeat: no-repeat; 
