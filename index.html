@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Afrobeat Machine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="player" aria-label="Audio player">
+        <header class="player__header">
+          <div>
+            <h1 class="player__title">The Afrobeat Machine</h1>
+            <p class="player__subtitle" id="trackLabel">No file loaded</p>
+          </div>
+          <div class="hint" aria-label="Keyboard shortcuts">
+            <kbd>Space</kbd> Play/Pause · <kbd>←</kbd>/<kbd>→</kbd> ±10s
+          </div>
+        </header>
+
+        <div class="row">
+          <label class="file">
+            <span class="file__label">Audio file</span>
+            <input id="fileInput" type="file" accept="audio/*" />
+          </label>
+        </div>
+
+        <div class="transport" role="group" aria-label="Playback controls">
+          <button class="btn" id="back10Btn" type="button" title="Back 10 seconds (Left Arrow)">
+            −10s
+          </button>
+          <button class="btn btn--primary" id="playPauseBtn" type="button" disabled>
+            Play
+          </button>
+          <button class="btn" id="forward10Btn" type="button" title="Forward 10 seconds (Right Arrow)" disabled>
+            +10s
+          </button>
+          <button class="btn" id="muteBtn" type="button" disabled>
+            Mute
+          </button>
+        </div>
+
+        <div class="timeline" aria-label="Playback timeline">
+          <input id="seek" class="seek" type="range" min="0" max="0" step="0.01" value="0" disabled />
+          <div class="time">
+            <span id="timeCurrent">0:00</span>
+            <span class="time__sep">/</span>
+            <span id="timeTotal">0:00</span>
+          </div>
+        </div>
+
+        <div class="controls" role="group" aria-label="Audio settings">
+          <div class="control">
+            <label for="volume">Volume</label>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1" disabled />
+            <output id="volumeOut" for="volume">100%</output>
+          </div>
+
+          <div class="control">
+            <label for="speed">Speed</label>
+            <select id="speed" disabled>
+              <option value="0.5">0.5×</option>
+              <option value="0.75">0.75×</option>
+              <option value="1" selected>1×</option>
+              <option value="1.25">1.25×</option>
+              <option value="1.5">1.5×</option>
+              <option value="2">2×</option>
+            </select>
+          </div>
+        </div>
+
+        <audio id="audio" preload="metadata"></audio>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
